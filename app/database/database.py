@@ -7,7 +7,7 @@ from fastapi import HTTPException, status, Depends
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 
-from app.schemas.schemas import Athletes, Coaches, EntriesGender, Medals, Teams, User, Login, TokenData
+from app.schemas.schemas import User, TokenData
 from app.security.security import MONGO_INITDB_ROOT_PASSWORD
 
 
@@ -17,7 +17,8 @@ ALGORITHM = 'HS256'
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='v1/login')
 
-client = motor.motor_asyncio.AsyncIOMotorClient(f"mongodb://root:somepassword@localhost:27017") # mongo
+DATABASE_URL = f"mongodb://root:{MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017"
+client = motor.motor_asyncio.AsyncIOMotorClient(DATABASE_URL)
 database = client.olimpiadas
 
 users = database.User

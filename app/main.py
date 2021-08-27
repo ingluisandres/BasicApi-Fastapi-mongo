@@ -4,7 +4,7 @@ sys.path.append("..")
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import athletes, coaches, entries_gender, medals, teams, login, user
+from app.routers import athletes, login, user
 
 
 app = FastAPI(
@@ -25,9 +25,5 @@ app.add_middleware(
 
 
 app.include_router(athletes.router)
-app.include_router(coaches.router)
-app.include_router(entries_gender.router)
-app.include_router(medals.router)
-app.include_router(teams.router)
 app.include_router(user.router)
 app.include_router(login.router)
