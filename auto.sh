@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # cat ~/.ssh/id_rsa.pub
+# ssh root@luiscontreras.xyz
 # rsync -a ./* root@luiscontreras.xyz:/root/code/fastapi-app  
 # .[^.]* para todos archivos ocultos
 
@@ -18,7 +19,5 @@ apt install haveged
 
 mkdir code
 cd code/
-mkdir project
-cd project/
 
-sudo docker-compose up --build -d
+#sudo docker-compose up --build -d
