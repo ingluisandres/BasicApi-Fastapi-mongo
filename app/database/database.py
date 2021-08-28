@@ -15,7 +15,7 @@ SECRET_KEY = '260512a9cc0a139082596b89b1c216039748a54ea10f936445ef903afe022fa8'
 ALGORITHM = 'HS256'
 
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl='v1/login')
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl='v1/login/')
 
 DATABASE_URL = f"mongodb://root:{MONGO_INITDB_ROOT_PASSWORD}@mongodb:27017"
 client = motor.motor_asyncio.AsyncIOMotorClient(DATABASE_URL)
